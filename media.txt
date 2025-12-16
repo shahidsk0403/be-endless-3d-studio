@@ -1,0 +1,113 @@
+ive updated the name of the images of the products so itd be easier to keep track
+and put it in our web application
+here are the update names of all the products
+i want you to read the name and then accordingly place them
+and for the shoptemplate page specifically i want the display to be in this order
+1. display
+2. side one
+3. side two 
+4. env
+(some images have more than two side images but we use only two as for a product only four images
+are allowed)
+here is the list of the new sources of the images
+media/products/arc-pendant-black-colour-env-hover.jpg
+media/products/arc-pendant-blue-bg-white-colour-display.jpg
+media/products/arc-pendant-blue-bg-white-colour-side-one.jpg
+media/products/arc-pendant-blue-bg-white-colour-side-two.jpg
+media/products/arc-pendant-brown-colour-env-hover.jpg
+media/products/arc-pendant-green-colour-env-hover.jpg
+media/products/arc-pendant-grey-colour-env-hover.jpg
+media/products/arc-pendant-white-bg-black-colour-display.jpg
+media/products/arc-pendant-white-bg-black-colour-side-one.jpg
+media/products/arc-pendant-white-bg-black-colour-side-two.jpg
+media/products/arc-pendant-white-bg-brown-colour-display.jpg
+media/products/arc-pendant-white-bg-brown-colour-side-one.jpg
+media/products/arc-pendant-white-bg-brown-colour-side-two.jpg
+media/products/arc-pendant-white-bg-green-colour-display.jpg
+media/products/arc-pendant-white-bg-green-colour-side-one.jpg
+media/products/arc-pendant-white-bg-green-colour-side-two.jpg
+media/products/arc-pendant-white-bg-grey-colour-display.jpg
+media/products/arc-pendant-white-bg-grey-colour-side-one.jpg
+media/products/arc-pendant-white-bg-grey-colour-side-two.jpg
+media/products/arc-pendant-white-colour-env-hover.jpg
+media/products/big-table-lamp-blue-bg-display.jpg
+media/products/big-table-lamp-blue-bg-sid-one.jpg
+media/products/big-table-lamp-blue-bg-sid-two.jpg
+media/products/big-table-lamp-env-hover-one.jpg
+media/products/big-table-lamp-env-hover-two.jpg
+media/products/big-table-lamp-white-bg-display.jpg
+media/products/buddha-blue-bg-display.jpg
+media/products/buddha-blue-bg-side-one.jpg
+media/products/buddha-blue-bg-side-two.jpg
+media/products/buddha-env-hover.jpg
+media/products/buddha-white-bg-display.png
+media/products/buddha-white-bg-side-one.png
+media/products/bulb-pendant-blue-bg-grey-colour-display.png
+media/products/bulb-pendant-blue-bg-white-colour-display.jpg
+media/products/bulb-pendant-blue-bg-white-colour-side-one.jpg
+media/products/bulb-pendant-blue-bg-white-colour-side-two.jpg
+media/products/bulb-pendant-colour-grey-env-hover.jpg
+media/products/bulb-pendant-white-bg-grey-colour-display.jpg
+media/products/bulb-pendant-white-bg-grey-colour-display.png
+media/products/bulb-pendant-white-bg-grey-colour-side-one.jpg
+media/products/bulb-pendant-white-bg-grey-colour-side-two.jpg
+media/products/bulb-pendant-white-colour-env-hover.jpg
+media/products/colosseum-env-hover.jpg
+media/products/colosseum-white-bg-display.jpg
+media/products/colosseum-white-bg-side-one.jpg
+media/products/colosseum-white-bg-side-three.jpg
+media/products/colosseum-white-bg-side-two.jpg
+media/products/half-moon-blue-bg-display.jpg
+media/products/half-moon-blue-bg-side-one.jpg
+media/products/half-moon-blue-bg-side-two.jpg
+media/products/half-moon-env-hover.jpg
+media/products/half-moon-white-bg-display.png
+media/products/hero-slider-image-homepage-one.jpg
+media/products/hero-slider-image-homepage-three.jpg
+media/products/hero-slider-image-homepage-two.jpg
+media/products/moon-city-blue-bg-display.png
+media/products/moon-city-blue-bg-side-four.jpg
+media/products/moon-city-blue-bg-side-one.jpg
+media/products/moon-city-blue-bg-side-three.jpg
+media/products/moon-city-blue-bg-side-two.jpg
+media/products/moon-city-env-hover.jpg
+media/products/moon-city-white-bg-display.jpg
+media/products/organic blue.jpg
+media/products/organic-pendant-blue-bg-side-one.jpg
+media/products/organic-pendant-blue-bg-side-two.jpg
+media/products/organic-pendant-env-hover.jpg
+media/products/organic-pendant-white-bg-display.jpg
+media/products/organic-pendant-white-bg-display.png
+media/products/organic-pendant-white-bg-side-one.png
+media/products/pendant-env-hover.jpg
+media/products/pendant-whtie-bg-display.jpg
+media/products/pendant-whtie-bg-side-one.jpg
+media/products/pendant-whtie-bg-side-two.jpg
+media/products/star-pendant-white-bg-black-colour-display.jpg
+media/products/star-pendant-white-bg-black-colour-env-hover.jpg
+media/products/star-pendant-white-bg-black-colour-side-one.jpg
+media/products/star-pendant-white-bg-black-colour-side-two.jpg
+media/products/table-organiser-env-hover.jpg
+media/products/table-organiser-white-bg-display.png
+media/products/table-organiser-white-bg-side-one.jpg
+
+and here are all the banner images where they are 
+ive named them accordingly so all youve to do is refer to the name and place where it belong
+
+media/banner/about-us-page-first.jpg
+media/banner/about-us-page-four.jpg
+media/banner/about-us-page-second.jpg
+media/banner/about-us-page-three.jpg
+media/banner/about-us-section-homepage-3D-prinitng-insights.jpg
+media/banner/about-us-section-homepage-technology.jpg
+media/banner/customisationpage-slider-first.jpg
+media/banner/customisationpage-slider-second.jpg
+media/banner/customisationpage-slider-three.jpg
+media/banner/customise-section-homepage.jpg
+media/banner/homepage-slider-image-first.jpg
+media/banner/homepage-slider-image-second.jpg
+media/banner/homepage-slider-image-third.jpg
+media/banner/shop-by-category-office-utility.jpeg
+media/banner/shop-by-category-customise.png
+media/banner/shop-by-category-home-decor.png
+media/banner/shop-by-category-lantern-lighting.png

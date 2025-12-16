@@ -1,0 +1,86 @@
+Create a modern React "About Us" page component with the following structure:
+
+
+SECTION 1 - COMPANY MISSION (Two-Column Layout):
+- Left column: Large feature image
+- Right column: Content card with light background containing:
+  * SVG icon at top (design/creativity theme)
+  * Heading: "Designs You Desire"
+  * Paragraph text about design philosophy
+  * Outlined button labeled "READ MORE"
+- Responsive: Stack vertically on mobile, side-by-side on desktop
+
+SECTION 2 - FEATURES GRID:
+- Four-column responsive grid (2 columns on tablet, 1 on mobile)
+- Each feature card contains:
+  * SVG icon (shipping, payment, returns, support themes)
+  * Bold heading
+  * Descriptive subtitle text
+- Icons should be clean line-style SVGs
+- Cards should have subtle hover effects
+
+SECTION 3 - MATERIAL SECTION (Two-Column Reversed):
+- Same structure as Section 2 but reversed positions
+- Left column: Content card with light background containing:
+  * SVG icon (quality/certification theme)
+  * Heading: "Material"
+  * Paragraph about quality assurance
+  * Outlined button labeled "READ MORE"
+- Right column: Large feature image
+
+SECTION 4 - BOTTOM FEATURES GRID:
+- Identical structure to Section 3
+- Same four features repeated
+
+STYLING REQUIREMENTS:
+- Use modern, clean design with ample whitespace
+- Section padding: 70px bottom margin between sections
+- Feature icons should be approximately 48-64px
+- Use a neutral color palette (whites, light grays, accent color for icons)
+- Buttons should have border-only style with hover state
+- All sections should be container-wrapped with max-width
+- Fully responsive with smooth transitions
+
+COMPONENT STRUCTURE:
+- Use functional React components
+- Separate reusable sub-components (FeatureCard, ContentBlock)
+- Accept props for dynamic content (images, text, icons)
+- Include sample data/content in the component file
+- Use CSS modules or styled-components for styling
+
+
+
+1. Company Mission Section
+A two-column layout combining an image on the left with an informational content block on the right. The right column includes:​
+
+An SVG icon (design/quality symbol)
+
+A heading "Designs You Desire"
+
+Descriptive paragraph about furniture design philosophy
+
+A "READ MORE" call-to-action button
+
+2. Features Grid Section
+A four-column responsive grid showcasing key service benefits. Each feature box contains:​
+
+An SVG icon (shipping, payment, returns, support symbols)
+
+Feature title
+
+Brief descriptive text
+
+3. Material Quality Section
+Another two-column layout with reversed positioning (text left, image right). The left column includes:​
+
+An SVG icon (quality badge symbol)
+
+"Material" heading
+
+Description about product quality and testing
+
+"READ MORE" button
+
+4. Bottom Features Grid
+Identical structure to section 3—another four-column feature grid repeating the service benefits for reinforcement.​
+

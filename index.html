@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/media/favicon.png">
+    <title>BE Endless 3D Printing Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FDFDFD',
+                        secondary: '#B4CFEC',
+                        cream: {
+                            50: '#FDFDFD',
+                            100: '#fffffd',
+                        },
+                        charcoal: {
+                            700: '#1f2121',
+                            800: '#262828',
+                        },
+                        teal: {
+                            50: '#F0F7FC',
+                            300: '#8AB6E1',
+                            500: '#B4CFEC',
+                            600: '#5B9BD5',
+                            700: '#4178BE',
+                        },
+                        brand: {
+                            primary: '#FDFDFD',
+                            secondary: '#B4CFEC',
+                            dark: '#48C9B0',
+                        },
+                        gainsboro: '#DCDCDC',
+                        lightblue: '#adcce0',
+                    },
+                    fontFamily: {
+                        sans: ['Barlow Semi Condensed', 'sans-serif'],
+                        serif: ['EB Garamond', 'serif'],
+                        system: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-serif-heading {
+            font-family: 'EB Garamond', serif;
+        }
+
+        .font-system {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

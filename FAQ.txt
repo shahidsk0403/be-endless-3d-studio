@@ -1,0 +1,434 @@
+import React, { useState, useEffect } from 'react';
+import { 
+    Truck, Shield, Layers, UploadCloud, Calculator, 
+    LayoutGrid, Wrench, ClipboardList, CreditCard, 
+    Leaf, Lightbulb, X, Search, ChevronDown, ChevronUp, ArrowRight,
+    LucideIcon
+} from 'lucide-react';
+
+interface Question {
+    q: string;
+    a: React.ReactNode;
+}
+
+interface Category {
+    id: number;
+    title: string;
+    subtitle: string;
+    icon: LucideIcon;
+    gradient: string;
+    gridClass: string;
+    questions: Question[];
+}
+
+const FAQ_DATA: Category[] = [
+    {
+        id: 1,
+        title: "Services & Policies",
+        subtitle: "Shipping, Returns & Support",
+        icon: Truck,
+        gradient: "bg-gradient-to-br from-blue-500 to-blue-700",
+        gridClass: "col-span-1 md:col-span-2 lg:col-span-2 row-span-1",
+        questions: [
+            {
+                q: "Do you offer free shipping?",
+                a: "Yes! We offer free standard shipping on all orders over $100 within the continental US. For international orders, shipping is calculated at checkout based on weight and destination."
+            },
+            {
+                q: "What is your return policy?",
+                a: "We accept returns within 14 days of delivery for non-custom items in their original condition. Custom prints and orders cannot be returned unless there is a manufacturing defect."
+            },
+            {
+                q: "Do you offer international shipping?",
+                a: "We currently ship to over 30 countries. Please note that customs duties and taxes are the responsibility of the recipient."
+            },
+            {
+                q: "How can I contact support?",
+                a: "Our support team is available Mon-Fri, 9am - 7pm EST via email at hello@beendless.com or by phone at +91 98765 43210."
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Materials & Specs",
+        subtitle: "PLA, ABS, PETG, PCF & More",
+        icon: Layers,
+        gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+        gridClass: "col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2",
+        questions: [
+            {
+                q: "What is PLA and when should I use it?",
+                a: "PLA (Polylactic Acid) is a biodegradable thermoplastic derived from renewable resources like corn starch. It's excellent for decorative items, prototypes, and models that won't be exposed to high heat (above 50°C)."
+            },
+            {
+                q: "What are the benefits of PETG?",
+                a: "PETG combines the ease of printing of PLA with the strength and durability of ABS. It is impact-resistant, heat-resistant, and water-resistant, making it great for functional parts and outdoor use."
+            },
+            {
+                q: "Do you print with Carbon Fiber?",
+                a: "Yes, we offer PCF (Polycarbonate Carbon Fiber). It provides an exceptional strength-to-weight ratio and high stiffness, ideal for engineering components and high-performance parts."
+            },
+            {
+                q: "What resolution do you print at?",
+                a: "Our standard layer height is 0.2mm (200 microns), which offers a great balance of speed and detail. For high-detail prints, we offer 0.1mm (100 microns) resolution."
+            },
+            {
+                q: "Can I request a material sample?",
+                a: "Yes, we offer a material sample kit containing swatches of all our available materials and colors. You can order this from our Shop page."
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Custom File Upload",
+        subtitle: "STL, OBJ & File Support",
+        icon: UploadCloud,
+        gradient: "bg-gradient-to-br from-emerald-400 to-teal-600",
+        gridClass: "col-span-1 row-span-1",
+        questions: [
+            {
+                q: "What file formats do you accept?",
+                a: "We primarily accept .STL and .OBJ files. We also support .STEP and .3MF for custom quote requests."
+            },
+            {
+                q: "Is there a file size limit?",
+                a: "Our instant quote tool accepts files up to 50MB. For larger files, please contact us directly for a secure upload link."
+            },
+            {
+                q: "Do you check my file for errors?",
+                a: "Yes, our system automatically performs a basic mesh check for manifold errors. Our engineers also manually review every custom order before printing."
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Quick Quote System",
+        subtitle: "Instant Pricing & Estimates",
+        icon: Calculator,
+        gradient: "bg-gradient-to-br from-orange-400 to-red-500",
+        gridClass: "col-span-1 row-span-1",
+        questions: [
+            {
+                q: "How is pricing calculated?",
+                a: "Pricing is based on material volume, machine time, and post-processing requirements. Our instant quote tool gives you a price immediately after upload."
+            },
+            {
+                q: "Do you offer bulk discounts?",
+                a: "Yes! Orders of 10+ identical units receive a 10% discount. For larger wholesale orders (>50 units), please contact our sales team."
+            },
+            {
+                q: "Is there a rush order fee?",
+                a: "We offer an express production option (2-3 days) for an additional 25% fee on the total order value."
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "Pre-Built Products",
+        subtitle: "Browse & Customize Designs",
+        icon: LayoutGrid,
+        gradient: "bg-gradient-to-br from-teal-400 to-cyan-600",
+        gridClass: "col-span-1 md:col-span-2 row-span-1",
+        questions: [
+            {
+                q: "Are your catalog items customizable?",
+                a: "Many of our catalog items have customizable options such as color, size, and material type directly on the product page."
+            },
+            {
+                q: "Are these items in stock?",
+                a: "We maintain a small stock of popular items. Most items are 'Printed on Demand' which allows us to offer more variety without waste."
+            },
+            {
+                q: "Can I request a catalog item in a different size?",
+                a: "Absolutely. Use the 'Custom Order' form and reference the product name with your desired dimensions."
+            }
+        ]
+    },
+    {
+        id: 6,
+        title: "Technical Support",
+        subtitle: "Design Assistance & Help",
+        icon: Wrench,
+        gradient: "bg-gradient-to-br from-red-500 to-rose-700",
+        gridClass: "col-span-1 row-span-1",
+        questions: [
+            {
+                q: "Can you help me design a 3D model?",
+                a: "Yes, we offer design services. You can submit a sketch or description via our 'Design Idea' tab on the Customize page."
+            },
+            {
+                q: "My print arrived broken, what do I do?",
+                a: "We package items securely, but accidents happen. Please send us a photo of the damage within 48 hours of delivery, and we will reprint and ship a replacement immediately."
+            }
+        ]
+    },
+    {
+        id: 7,
+        title: "Order Process",
+        subtitle: "From Quote to Delivery",
+        icon: ClipboardList,
+        gradient: "bg-gradient-to-br from-indigo-500 to-violet-700",
+        gridClass: "col-span-1 row-span-1 lg:row-span-2",
+        questions: [
+            {
+                q: "How long does production take?",
+                a: "Standard production time is 3-5 business days. Complex orders or large batches may take 7-10 days."
+            },
+            {
+                q: "How do I track my order?",
+                a: "Once your order ships, you will receive an email with a tracking number and a link to view the status in your account dashboard."
+            },
+            {
+                q: "Can I cancel my order?",
+                a: "Orders can be cancelled within 12 hours of placement. Once production begins, we cannot accept cancellations for custom items."
+            }
+        ]
+    },
+    {
+        id: 8,
+        title: "Account & Billing",
+        subtitle: "Manage Your Orders",
+        icon: CreditCard,
+        gradient: "bg-gradient-to-br from-pink-500 to-fuchsia-600",
+        gridClass: "col-span-1 row-span-1",
+        questions: [
+            {
+                q: "Do I need an account to order?",
+                a: "No, you can checkout as a guest. However, creating an account allows you to save designs, view order history, and earn rewards."
+            },
+            {
+                q: "What payment methods do you accept?",
+                a: "We accept all major credit cards (Visa, Mastercard, Amex), PayPal, and RazorPay for secure transactions."
+            }
+        ]
+    },
+    {
+        id: 9,
+        title: "Sustainability",
+        subtitle: "Eco-Friendly Printing",
+        icon: Leaf,
+        gradient: "bg-gradient-to-br from-lime-500 to-green-700",
+        gridClass: "col-span-1 row-span-1",
+        questions: [
+            {
+                q: "Is 3D printing eco-friendly?",
+                a: "Additive manufacturing is inherently less wasteful than subtractive methods. We reuse support material where possible and prioritize biodegradable plastics like PLA."
+            },
+            {
+                q: "Do you use recycled materials?",
+                a: "Yes, our 'Eco-Grey' and 'Eco-Black' filament lines are made from 100% recycled industrial plastic waste."
+            }
+        ]
+    },
+    {
+        id: 10,
+        title: "Getting Started",
+        subtitle: "New to 3D Printing?",
+        icon: Lightbulb,
+        gradient: "bg-gradient-to-br from-amber-400 to-orange-500",
+        gridClass: "col-span-1 md:col-span-2 row-span-1",
+        questions: [
+            {
+                q: "I'm new to this. Where do I start?",
+                a: "Check out our pre-built catalog for inspiration! If you want something custom, sites like Thingiverse or Printables offer free models you can download and upload to our site."
+            },
+            {
+                q: "What is 'infill'?",
+                a: "Infill is the internal structure of the print. Higher infill (e.g., 50-100%) makes the part stronger but uses more material. Lower infill (10-20%) is lighter and cheaper."
+            }
+        ]
+    }
+];
+
+const FAQ: React.FC = () => {
+    const [activeCategory, setActiveCategory] = useState<Category | null>(null);
+    const [activeQuestionIndex, setActiveQuestionIndex] = useState<number | null>(null);
+    const [searchQuery, setSearchQuery] = useState("");
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (activeCategory) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [activeCategory]);
+
+    // Keyboard navigation
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setActiveCategory(null);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
+    const openCategory = (category: Category) => {
+        setActiveCategory(category);
+        setActiveQuestionIndex(null); // Reset open question
+        setSearchQuery(""); // Reset search
+    };
+
+    const filteredQuestions = activeCategory?.questions.filter(q => 
+        q.q.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        (typeof q.a === 'string' && q.a.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+
+    return (
+        <div className="pt-24 pb-20 bg-gray-50 min-h-screen">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header */}
+                <div className="text-center mb-16 space-y-4">
+                    <h1 className="text-4xl md:text-5xl font-serif-heading font-bold text-charcoal-800">
+                        Frequently Asked Questions
+                    </h1>
+                    <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                        Everything you need to know about our services, materials, and custom ordering process.
+                    </p>
+                </div>
+
+                {/* Bento Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
+                    {FAQ_DATA.map((category) => (
+                        <div 
+                            key={category.id}
+                            onClick={() => openCategory(category)}
+                            className={`
+                                ${category.gridClass}
+                                group relative overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-2xl 
+                                transition-all duration-300 transform hover:-translate-y-1
+                            `}
+                        >
+                            {/* Background & Gradient */}
+                            <div className={`absolute inset-0 ${category.gradient} opacity-90 transition-opacity group-hover:opacity-100`}></div>
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+
+                            {/* Decorative Background Icon (Faded) */}
+                            <category.icon 
+                                className="absolute -bottom-4 -right-4 w-32 h-32 text-white opacity-10 transform rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-transform duration-500" 
+                            />
+
+                            {/* Content */}
+                            <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+                                <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center backdrop-blur-sm mb-4">
+                                    <category.icon className="text-white w-6 h-6" />
+                                </div>
+                                
+                                <div>
+                                    <h3 className="text-2xl font-bold text-white mb-1 leading-tight">{category.title}</h3>
+                                    <p className="text-white/80 text-sm font-medium">{category.subtitle}</p>
+                                </div>
+
+                                <div className="flex items-center text-white/90 text-sm font-bold mt-4 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">
+                                    View Answers <ArrowRight size={16} className="ml-2" />
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* FAQ Modal */}
+                {activeCategory && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        {/* Backdrop */}
+                        <div 
+                            className="absolute inset-0 bg-charcoal-800/60 backdrop-blur-sm transition-opacity"
+                            onClick={() => setActiveCategory(null)}
+                        ></div>
+
+                        {/* Modal Content */}
+                        <div className="relative bg-white w-full max-w-3xl max-h-[90vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-fade-in-up">
+                            
+                            {/* Modal Header */}
+                            <div className={`p-8 pb-6 ${activeCategory.gradient} text-white`}>
+                                <button 
+                                    onClick={() => setActiveCategory(null)}
+                                    className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 rounded-full transition-colors text-white"
+                                >
+                                    <X size={20} />
+                                </button>
+                                
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="p-3 bg-white/20 rounded-xl backdrop-blur-md">
+                                        <activeCategory.icon size={32} className="text-white" />
+                                    </div>
+                                    <div>
+                                        <h2 className="text-3xl font-bold">{activeCategory.title}</h2>
+                                        <p className="text-white/80">{activeCategory.subtitle}</p>
+                                    </div>
+                                </div>
+
+                                {/* Search Bar */}
+                                <div className="relative">
+                                    <input 
+                                        type="text" 
+                                        placeholder={`Search in ${activeCategory.title}...`}
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:bg-white focus:text-charcoal-800 focus:placeholder-gray-400 transition-all"
+                                    />
+                                    <Search className={`absolute left-3 top-3.5 w-5 h-5 ${searchQuery || document.activeElement?.tagName === 'INPUT' ? 'text-charcoal-800' : 'text-white/60'}`} />
+                                </div>
+                            </div>
+
+                            {/* Q&A List */}
+                            <div className="flex-1 overflow-y-auto p-8 bg-white">
+                                {filteredQuestions && filteredQuestions.length > 0 ? (
+                                    <div className="space-y-4">
+                                        {filteredQuestions.map((qa, index) => (
+                                            <div 
+                                                key={index} 
+                                                className={`border rounded-xl transition-all duration-300 ${activeQuestionIndex === index ? 'border-teal-500 bg-teal-50/30' : 'border-gray-200 hover:border-teal-200'}`}
+                                            >
+                                                <button 
+                                                    onClick={() => setActiveQuestionIndex(activeQuestionIndex === index ? null : index)}
+                                                    className="w-full flex justify-between items-center p-5 text-left"
+                                                >
+                                                    <span className={`font-bold text-lg ${activeQuestionIndex === index ? 'text-teal-700' : 'text-charcoal-800'}`}>
+                                                        {qa.q}
+                                                    </span>
+                                                    {activeQuestionIndex === index ? (
+                                                        <ChevronUp className="text-teal-600 shrink-0 ml-4" />
+                                                    ) : (
+                                                        <ChevronDown className="text-gray-400 shrink-0 ml-4" />
+                                                    )}
+                                                </button>
+                                                
+                                                <div 
+                                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${activeQuestionIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                                                >
+                                                    <div className="p-5 pt-0 text-gray-600 leading-relaxed border-t border-transparent">
+                                                        {qa.a}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="text-center py-12 text-gray-400">
+                                        <p className="text-lg">No matching questions found.</p>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Modal Footer */}
+                            <div className="p-6 border-t bg-gray-50 flex justify-between items-center">
+                                <p className="text-sm text-gray-500">Still have questions?</p>
+                                <a 
+                                    href="/contact" 
+                                    className="px-6 py-2 bg-charcoal-800 text-white font-bold rounded-lg hover:bg-charcoal-700 transition-colors"
+                                >
+                                    Contact Support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default FAQ;

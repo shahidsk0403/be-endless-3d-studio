@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Logo Preview</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* background: #0a0a0a;  <- Removed dark background */
+            background: #ffffff; /* <- Set background to white */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .animated-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* background: #0a0a0a; <- Removed dark background */
+            background: transparent; /* <- Made transparent for PNG export */
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Container Scoping */
+        .animated-logo-container svg {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            /* filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1)); <- Removed light shadow */
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.1)); /* <- Added dark shadow for contrast */
+        }
+
+        /* Background circle */
+        .bg-circle {
+            /* fill: #000; <- Removed black fill */
+            fill: transparent; /* <- Made transparent */
+        }
+
+        /* Outer white circle - draws first */
+        .outer-circle {
+            /* stroke: #ffffff; <- Changed from white to black */
+            stroke: #000000;
+            stroke-width: 8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawCircle 2s ease-in-out forwards;
+        }
+
+        /* Inner gold circle - draws second */
+        .inner-circle {
+            stroke: #d4af37;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawCircle 2s ease-in-out 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Decorative circle inside gold ring */
+        .decorative-circle {
+            stroke: #d4af37;
+            stroke-width: 2;
+            fill: none;
+            animation: drawCircle 1.5s ease-in-out 1.2s forwards;
+            opacity: 0;
+        }
+
+        /* 3D Printer base frame */
+        .printer-base {
+            /* stroke: #ffffff; <- Changed from white to black */
+            stroke: #000000;
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawPath 2.5s ease-in-out 1.6s forwards;
+            opacity: 0;
+        }
+
+        /* Printer internal details */
+        .printer-detail {
+            /* stroke: #ffffff; <- Changed from white to black */
+            stroke: #000000;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawPath 2s ease-in-out 2.2s forwards;
+            opacity: 0;
+        }
+
+        /* Printer nozzle/extruder */
+        .printer-nozzle {
+            stroke: #d4af37;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawPath 1.5s ease-in-out 2.8s forwards;
+            opacity: 0;
+        }
+
+        /* Text animations */
+        .text-top {
+            font-size: 42px; /* Slightly reduced to fit curve better */
+            font-weight: bold;
+            letter-spacing: 8px;
+            fill: #d4af37;
+            animation: fadeIn 1s ease-in 3.5s forwards;
+            opacity: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .text-bottom {
+            font-size: 18px;
+            letter-spacing: 4px;
+            fill: #d4af37;
+            animation: fadeIn 1s ease-in 4s forwards;
+            opacity: 0;
+            font-family: 'Georgia', serif;
+            font-weight: 500;
+        }
+
+        /* Keyframe animations */
+        @keyframes drawCircle {
+            to {
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes drawPath {
+            to {
+                stroke-dashoffset: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container" class="animated-logo-container">
+        <svg id="logo-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Top Curve for "BE ENDLESS" (Radius ~160) -->
+                <path id="top-curve" d="M 90, 250 A 160 160 0 1 1 410 250" fill="transparent" />
+                <!-- Bottom Curve for "3D PRINTING STUDIO" (Radius ~185) -->
+                <!-- Drawn counter-clockwise to keep text upright inside the curve -->
+                <path id="bottom-curve" d="M 65, 250 A 185 185 0 0 0 435 250" fill="transparent" />
+            </defs>
+
+            <!-- Background -->
+            <circle class="bg-circle" cx="250" cy="250" r="245"/>
+            
+            <!-- Outer White Circle (Draws First) -->
+            <circle 
+                class="outer-circle" 
+                cx="250" 
+                cy="250" 
+                r="240"
+                style="stroke-dasharray: 1508; stroke-dashoffset: 1508;"
+            />
+            
+            <!-- Inner Gold Circle (Draws Second) -->
+            <circle 
+                class="inner-circle" 
+                cx="250" 
+                cy="250" 
+                r="215"
+                style="stroke-dasharray: 1351; stroke-dashoffset: 1351;"
+            />
+            
+            <!-- Decorative Inner Circle -->
+            <circle 
+                class="decorative-circle" 
+                cx="250" 
+                cy="250" 
+                r="200"
+                style="stroke-dasharray: 1257; stroke-dashoffset: 1257;"
+            />
+            
+            <!-- 3D PRINTER - Main Frame (Rectangle) -->
+            <rect 
+                class="printer-base"
+                x="185" 
+                y="150" 
+                width="130" 
+                height="140"
+                rx="4"
+                style="stroke-dasharray: 540; stroke-dashoffset: 540;"
+            />
+            
+            <!-- Printer Top Plate -->
+            <line 
+                class="printer-detail"
+                x1="185" 
+                y1="165" 
+                x2="315" 
+                y2="165"
+                style="stroke-dasharray: 130; stroke-dashoffset: 130;"
+            />
+            
+            <!-- Printer Build Platform -->
+            <rect 
+                class="printer-detail"
+                x="200" 
+                y="240" 
+                width="100" 
+                height="8"
+                style="stroke-dasharray: 216; stroke-dashoffset: 216;"
+            />
+            
+            <!-- Left Support Rod -->
+            <line 
+                class="printer-detail"
+                x1="195" 
+                y1="170" 
+                x2="195" 
+                y2="240"
+                style="stroke-dasharray: 70; stroke-dashoffset: 70;"
+            />
+            
+            <!-- Right Support Rod -->
+            <line 
+                class="printer-detail"
+                x1="305" 
+                y1="170" 
+                x2="305" 
+                y2="240"
+                style="stroke-dasharray: 70; stroke-dashoffset: 70;"
+            />
+            
+            <!-- Center Support Rod -->
+            <line 
+                class="printer-detail"
+                x1="250" 
+                y1="170" 
+                x2="250" 
+                y2="240"
+                style="stroke-dasharray: 70; stroke-dashoffset: 70;"
+            />
+            
+            <!-- Extruder Head - Main Body -->
+            <rect 
+                class="printer-nozzle"
+                x="230" 
+                y="130" 
+                width="40" 
+                height="35"
+                rx="2"
+                style="stroke-dasharray: 150; stroke-dashoffset: 150;"
+            />
+            
+            <!-- Nozzle Tip -->
+            <circle 
+                class="printer-nozzle"
+                cx="250" 
+                cy="168" 
+                r="5"
+                style="stroke-dasharray: 31; stroke-dashoffset: 31;"
+            />
+            
+            <!-- Heating Element Line -->
+            <line 
+                class="printer-nozzle"
+                x1="245" 
+                y1="140" 
+                x2="255" 
+                y2="140"
+                style="stroke-dasharray: 10; stroke-dashoffset: 10;"
+            />
+            
+            <!-- X-Axis Carriage Detail -->
+            <circle 
+                class="printer-detail"
+                cx="210" 
+                cy="290" 
+                r="4"
+                style="stroke-dasharray: 25; stroke-dashoffset: 25;"
+            />
+            <circle 
+                class="printer-detail"
+                cx="290" 
+                cy="290" 
+                r="4"
+                style="stroke-dasharray: 25; stroke-dashoffset: 25;"
+            />
+            
+            <!-- Power/Control Box at Base -->
+            <rect 
+                class="printer-detail"
+                x="210" 
+                y="300" 
+                width="80" 
+                height="25"
+                rx="3"
+                style="stroke-dasharray: 210; stroke-dashoffset: 210;"
+            />
+            
+            <!-- Text: BE ENDLESS (Top Curved) -->
+            <text class="text-top" dy="10">
+                <textPath href="#top-curve" startOffset="50%" text-anchor="middle">
+                    BE ENDLESS
+                </textPath>
+            </text>
+            
+            <!-- Text: 3D PRINTING STUDIO (Bottom Curved) -->
+            <text class="text-bottom" dy="-5">
+                <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+                    3D PRINTING STUDIO
+                </textPath>
+            </text>
+        </svg>
+    </div>
+</body>
+</html>

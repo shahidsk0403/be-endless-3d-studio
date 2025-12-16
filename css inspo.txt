@@ -1,0 +1,686 @@
+
+## **CSS Architecture**
+
+### External Stylesheets (Loading Order)
+```html
+1. libs/bootstrap/css/bootstrap.min.css         /* Grid system & utilities */
+2. libs/feather-font/css/iconfont.css           /* Feather icons */
+3. libs/icomoon-font/css/icomoon.css            /* IcoMoon icons */
+4. libs/font-awesome/css/font-awesome.css       /* Font Awesome icons */
+5. libs/wpbingofont/css/wpbingofont.css         /* Custom icon font */
+6. libs/elegant-icons/css/elegant.css           /* Elegant icons */
+7. libs/slick/css/slick.css                     /* Carousel core */
+8. libs/slick/css/slick-theme.css               /* Carousel theme */
+9. libs/mmenu/css/mmenu.min.css                 /* Mobile menu */
+10. assets/css/app.css                          /* Main custom styles */
+11. assets/css/responsive.css                   /* Responsive overrides */
+```
+
+***
+
+## **Typography System**
+
+### Font Families
+```css
+Primary Font: "Barlow Semi Condensed"
+  - Weights: 100, 200, 300, 400, 500, 600, 700
+  - Usage: Headers, navigation, buttons, body text
+
+Secondary Font: "EB Garamond"
+  - Weights: 100-900 (all weights + italics)
+  - Usage: Elegant decorative text, quotes
+```
+
+### Font Sizes (Inline Styles Found)
+```css
+/* About Us Section Title */
+font-size: xx-large;         /* ~32px */
+font-weight: 400;
+
+/* Description Text */
+font-weight: 500;
+color: #555;
+max-width: 400px;
+margin-top: 15px;
+```
+
+***
+
+## **Color Scheme**
+
+### Primary Colors
+```css
+Header:
+  - color-white            /* White header variant */
+  - Background: Transparent/White
+
+Buttons:
+  - button-white          /* White background buttons */
+  - button-black          /* Black background buttons */
+  - btn-primary           /* Bootstrap primary (likely blue) */
+  - btn-default           /* Default gray/neutral */
+
+Backgrounds:
+  - background-color: gainsboro;    /* Footer: #DCDCDC */
+  - background-color: #adcce0;      /* Customize section: Light blue */
+
+Text Colors:
+  - color: #555;                    /* Medium gray text */
+  - color-white class               /* White text on dark backgrounds */
+```
+
+### Discount/Sale Labels
+```css
+.hot              /* Red/Orange "Hot" badge */
+.onsale           /* "-33%", "-7%" discount badges */
+```
+
+***
+
+## **Layout & Spacing System**
+
+### Container Classes
+```css
+.page-wrapper                /* Full page container */
+.section-container           /* Main content container */
+.section-padding             /* Consistent section padding */
+```
+
+### Spacing Utilities
+```css
+/* Margin Bottom */
+.m-b-40          /* margin-bottom: 40px */
+.m-b-70          /* margin-bottom: 70px */
+.m-b-12          /* margin-bottom: 12px */
+.m-b-15          /* margin-bottom: 15px */
+
+/* Margin Top */
+.mt-5            /* Bootstrap margin-top utility */
+
+/* Padding */
+.p-0             /* padding: 0 */
+.p-l-r           /* padding-left & padding-right */
+.p-t-5           /* padding-top: 5px */
+.p-t-50          /* padding-top: 50px */
+
+/* Spacing Modifiers */
+.sm-m-b          /* Small screen margin-bottom */
+.no-space        /* Remove default spacing */
+```
+
+***
+
+## **Bootstrap Grid System**
+
+### Column Classes (Responsive Breakpoints)
+```css
+/* Extra Small (< 576px) */
+.col-3, .col-6, .col-12
+
+/* Small (≥ 576px) */
+.col-sm-3, .col-sm-6, .col-sm-12
+
+/* Medium (≥ 768px) */
+.col-md-4, .col-md-6, .col-md-12
+
+/* Large (≥ 992px) */
+.col-lg-2, .col-lg-3, .col-lg-4, .col-lg-6
+
+/* Extra Large (≥ 1200px) */
+.col-xl-3, .col-xl-4, .col-xl-6
+
+/* Custom Breakpoint (≥ 1440px) */
+.col-1440       /* Used for product grids */
+```
+
+### Custom Column Classes
+```css
+.column-50       /* 50% width column */
+.column-background-wrap
+```
+
+***
+
+## **Component Styling**
+
+### Header Styles
+```css
+.site-header {
+  Classes: header-v1, color-white
+}
+
+.header-mobile {
+  /* Mobile-specific header */
+}
+
+.header-desktop {
+  /* Desktop-specific header */
+}
+
+.header-mobile-fixed {
+  /* Fixed bottom navigation bar */
+}
+
+.header-left, .header-center, .header-right {
+  /* 3-column header layout */
+}
+```
+
+### Navigation Menu
+```css
+.menu {
+  Classes: level-0, level-1        /* Multi-level dropdown */
+  
+  .menu-item
+  .menu-item-has-children
+  .current-menu-item               /* Active page highlight */
+  .mega-menu                       /* Full-width dropdown */
+  .mega-menu-fullwidth
+}
+
+.sub-menu {
+  /* Dropdown menu styling */
+}
+
+.menu-item-text {
+  /* Navigation link text wrapper */
+}
+```
+
+### Button Styles
+```css
+.button {
+  /* Base button class */
+}
+
+/* Button Variants */
+.button-slider        /* Hero slider buttons */
+.button-white         /* White background */
+.button-black         /* Black background */
+.btn-primary          /* Primary action */
+.btn-default          /* Secondary action */
+.btn-underline        /* Underlined text link */
+
+/* Button States */
+.product-btn          /* Product action buttons */
+.single-add-to-cart-button
+.quick-buy
+```
+
+***
+
+## **Product Card Styling**
+
+```css
+.products-entry {
+  Classes: clearfix, product-wapper
+}
+
+/* Product Badges */
+.product-lable {
+  .hot          /* "Hot" badge */
+  .onsale       /* Discount percentage */
+}
+
+/* Product Images */
+.product-thumb-hover {
+  /* Container for image hover effect */
+}
+
+.post-image {
+  /* Main product image */
+}
+
+.hover-image.back {
+  /* Secondary image shown on hover */
+}
+
+/* Product Actions */
+.product-button {
+  .btn-wishlist
+  .btn-compare
+  .product-quickview
+}
+
+/* Product Info */
+.products-content {
+  .product-title    /* Product name */
+  .price            /* Price display */
+  .btn-add-to-cart
+}
+
+/* Stock Status */
+.product-stock {
+  .stock          /* "Out Of Stock" label */
+}
+```
+
+***
+
+## **Slider/Carousel Configuration**
+
+### Slick Slider Data Attributes
+```html
+data-autoplay="false"
+data-dots="true"              /* Show dot navigation */
+data-nav="false"              /* Hide arrow navigation */
+data-nav="1"                  /* Show arrow navigation */
+data-slidestoscroll="true"
+
+/* Responsive Column Settings */
+data-columns4="1"            /* 1 column on extra small */
+data-columns3="2"            /* 2 columns on small */
+data-columns2="3"            /* 3 columns on medium */
+data-columns1="3"            /* 3 columns on large */
+data-columns1440="4"         /* 4 columns on 1440px+ */
+data-columns="4"             /* 5 columns on desktop */
+```
+
+### Slider Layout Classes
+```css
+.slick-sliders {
+  .layout-10               /* Slider variant */
+  .nav-center              /* Centered navigation */
+  .fullwidth               /* Full-width slider */
+}
+
+.slick-slide {
+  /* Individual slide */
+}
+
+/* Slider States */
+.slick-current           /* Active slide */
+.slick-active            /* Visible slides */
+.slick-initialized       /* Initialized carousel */
+```
+
+***
+
+## **Content Positioning**
+
+### Flexbox/Alignment Classes
+```css
+.horizontal-center       /* Horizontal centering */
+.vertical-middle         /* Vertical centering */
+.text-center            /* Text alignment center */
+.text-right             /* Text alignment right */
+```
+
+### Content Blocks
+```css
+.content {
+  /* Generic content wrapper */
+}
+
+.item-content {
+  /* Slider item content */
+}
+
+.item-info {
+  /* Overlay information */
+}
+```
+
+***
+
+## **Banner & Image Styling**
+
+```css
+/* Banner Wrapper */
+.block-banners {
+  .layout-1, .layout-11, .layout-12    /* Banner variants */
+  .banners-effect                      /* Hover effects */
+  .background-img                      /* Background image style */
+}
+
+.banner-wrapper {
+  .banners                   /* Banner container */
+}
+
+.banner-image {
+  /* Image container */
+  Sizes: 571x622, 406x304, 1920x1080
+}
+
+.banner-wrapper-infor {
+  /* Banner text overlay */
+}
+
+/* Image Dimensions */
+Product Images: 600x600px
+Slider Images: 1920x1080px
+Instagram: 690x690px
+Logo: 400x79px
+```
+
+***
+
+## **Cart & Dropdown Styling**
+
+```css
+/* Mini Cart */
+.mini-cart {
+  .top-cart
+  .cart-popup
+  .dropdown-menu
+}
+
+.cart-icon {
+  .icons-cart
+  .cart-count           /* Badge counter styling */
+}
+
+/* Cart States */
+.cart-empty-wrap       /* Empty cart state */
+.cart-list-wrap        /* Cart with items */
+
+/* Cart Items */
+.mini-cart-item {
+  .product-image       /* Thumbnail */
+  .product-name        /* Product title */
+  .quantity            /* Quantity display */
+  .price               /* Price display */
+  .remove              /* Remove button */
+}
+
+/* Cart Summary */
+.total-cart {
+  .title-total
+  .total-price
+}
+
+/* Free Shipping Progress */
+.free-ship {
+  .title-ship
+  .total-percent {
+    .percent {
+      style="width: 20%"    /* Progress bar width */
+    }
+  }
+}
+```
+
+***
+
+## **Form Styling**
+
+```css
+/* Login/Register Forms */
+.form-login-register {
+  .box-form-login
+  .box-content
+}
+
+.form-login, .form-register {
+  .active              /* Visible form state */
+}
+
+/* Form Fields */
+.input-text {
+  /* Text input styling */
+  required="required"
+}
+
+/* Field Groups */
+.username, .password, .email {
+  /* Input field containers */
+}
+
+/* Form Actions */
+.rememberme-lost {
+  .rememberme
+  .lost_password
+}
+
+.button-login, .button-register {
+  /* Submit buttons */
+}
+
+/* Form Toggles */
+.button-next-reregister        /* Switch to register */
+.button-next-login             /* Switch to login */
+```
+
+***
+
+## **Blog/Post Styling**
+
+```css
+.block-posts {
+  .layout-3            /* 3-column layout */
+  .recent-posts        /* Recent posts widget */
+}
+
+.post-grid {
+  /* Post card container */
+}
+
+.post-inner {
+  .post-image          /* Featured image */
+  .post-thumbnail      /* Image link wrapper */
+}
+
+.post-content {
+  .post-categories     /* Category label */
+  .post-title          /* Post heading */
+  .post-time          /* Date/comments */
+  .post-date
+  .post-comment
+}
+
+.btn-read-more {
+  .read-more
+  .btn-underline       /* Underlined link style */
+}
+```
+
+***
+
+## **Footer Styling**
+
+```css
+.site-footer {
+  style="background-color: gainsboro;"
+}
+
+.footer {
+  .footer-bottom
+}
+
+/* Footer Columns */
+.block-image         /* Logo/payment images */
+.block-menu          /* Link lists */
+.block-newsletter    /* Email signup */
+.block-social        /* Social icons */
+
+/* Footer Elements */
+.block-title         /* Section headers */
+.block-content       /* Content area */
+.newsletter-form     /* Email form */
+.social-link         /* Social icons list */
+
+/* Footer Layout */
+.footer-left         /* Copyright text */
+.footer-right        /* Social links */
+```
+
+***
+
+## **Icon Styling**
+
+### Icon Classes Used
+```css
+/* Font Awesome */
+.fa-twitter
+.fa-instagram
+.fa-dribbble
+.fa-behance
+
+/* Custom Icon Fonts */
+.icon-large-paper-bag      /* Shopping bag */
+.icon-user                 /* User account */
+.icon-search               /* Search icon */
+.icon-heart                /* Wishlist */
+.icon_close                /* Close/remove */
+.arrow_right               /* Arrow right */
+
+/* WPBingo Icons */
+.wpb-icon-shop
+.wpb-icon-user
+.wpb-icon-magnifying-glass
+.wpb-icon-heart
+
+/* Elegant Icons */
+.arrow_carrot-up           /* Back to top */
+```
+
+***
+
+## **Interactive States & Effects**
+
+```css
+/* Hover Effects */
+.product-thumb-hover       /* Image swap on hover */
+.banners-effect            /* Banner hover effects */
+
+/* Badge Counters */
+.cart-count               /* Cart item count */
+.count-wishlist           /* Wishlist count */
+span.count-wrapper        /* Counter wrapper */
+
+/* Loading/Animation States */
+.slick-initialized        /* Carousel ready */
+.slick-current            /* Active slide */
+.slick-active             /* Visible slide */
+
+/* Visibility States */
+.active                   /* Active form/tab */
+.current-menu-item        /* Active nav item */
+.button-show              /* Show back-to-top button */
+```
+
+***
+
+## **Utility Classes**
+
+### Display & Visibility
+```css
+.clearfix              /* Clear floats */
+.full-height           /* 100% height */
+.fullwidth             /* 100% width */
+.draggable             /* Draggable element */
+```
+
+### Borders & Dividers
+```css
+.top-border           /* Top border line */
+```
+
+### Positioning
+```css
+.background-overlay   /* Dark overlay layer */
+```
+
+### Special Modifiers
+```css
+.light                /* Light variant */
+.dark                 /* Dark variant */
+.default              /* Default variant */
+```
+
+***
+
+## **Responsive Behavior**
+
+### Visibility Classes (Implied)
+```css
+.header-mobile        /* Visible on mobile */
+.header-desktop       /* Visible on desktop */
+.header-mobile-fixed  /* Fixed mobile bar */
+```
+
+### Responsive Image Sizing
+```html
+width="600" height="600"      /* Product images */
+width="1920" height="1080"    /* Hero images */
+width="400" height="79"       /* Logo */
+width="690" height="690"      /* Instagram */
+```
+
+***
+
+## **Inline Styles Found**
+
+### Customize Section
+```css
+background-color: #adcce0;     /* Light blue background */
+```
+
+### About Us Section Title
+```css
+font-size: xx-large;
+font-weight: 400;
+```
+
+### About Us Description
+```css
+max-width: 400px;
+margin-top: 15px;
+color: #555;
+font-weight: 500;
+```
+
+### Progress Bar (Free Shipping)
+```css
+style="width: 20%"            /* Dynamic width percentage */
+```
+
+### Instagram Slider Item
+```css
+width: 239px;                 /* Calculated by slider */
+```
+
+### Slick Track
+```css
+opacity: 1;
+width: 1195px;
+transform: translate3d(0px, 0px, 0px);
+```
+
+### Lookbook Hotspots
+```css
+height: 30px;
+width: 30px;
+left: 43.91%;
+top: 69.01%;
+```
+
+### Lookbook Popup Position
+```css
+left: 33px;
+bottom: 10px;
+```
+
+### Star Rating
+```css
+style="width: 80%"            /* 4 out of 5 stars */
+style="width: 100%"           /* 5 out of 5 stars */
+```
+
+***
+
+## **Styling Summary by Section**
+
+| Section | Key Classes | Color Scheme | Fonts |
+|---------|------------|--------------|-------|
+| **Header** | `site-header`, `color-white`, `header-v1` | White background | Barlow Semi Condensed |
+| **Hero** | `block-sliders`, `layout-10`, `nav-center` | Dark overlay + white text | Barlow (titles) |
+| **Categories** | `block-banners`, `banners-effect` | White buttons on images | Barlow |
+| **Products** | `products-entry`, `product-wapper` | Mixed (badges, prices) | Barlow |
+| **About** | `block-posts`, `layout-3` | White background | Mixed |
+| **Customize** | `lookbook`, `layout-3` | Light blue (#adcce0) | Barlow |
+| **Instagram** | `block-instagram`, `fullwidth` | N/A (images only) | Barlow |
+| **Footer** | `site-footer` | Gainsboro (#DCDCDC) | Barlow |
+
+***
+

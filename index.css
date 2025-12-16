@@ -1,0 +1,1006 @@
+/* Global Styles */
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #555;
+    background-color: #DCDCDC;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #1f2121;
+}
+
+.font-serif-heading {
+    font-family: 'EB Garamond', serif;
+}
+
+/* Spacing Utilities */
+.m-b-40 {
+    margin-bottom: 40px;
+}
+
+.m-b-70 {
+    margin-bottom: 70px;
+}
+
+.m-b-12 {
+    margin-bottom: 12px;
+}
+
+.m-b-15 {
+    margin-bottom: 15px;
+}
+
+.p-t-5 {
+    padding-top: 5px;
+}
+
+.p-t-50 {
+    padding-top: 50px;
+}
+
+.no-space {
+    margin: 0;
+    padding: 0;
+}
+
+/* Colors */
+.color-white {
+    color: white;
+}
+
+/* Buttons */
+.button-slider {
+    display: inline-block;
+    padding: 15px 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.button-white {
+    background-color: white;
+    color: #262828;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.button-white:hover {
+    background-color: #262828;
+    color: white;
+    border-color: #262828;
+}
+
+/* Section Specifics */
+.section-padding {
+    padding: 70px 0;
+}
+
+/* About Us */
+.about-title {
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.about-description {
+    font-weight: 500;
+    color: #555;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+/* Hero Slider Layout */
+.item-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 850px;
+    overflow: hidden;
+}
+
+.content-image {
+    width: 100%;
+    height: 100%;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* vertical-middle */
+    justify-content: center;
+    /* horizontal-center */
+    z-index: 10;
+}
+
+.item-info .content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.title-slider {
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #1f2121;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.description-slider {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+    .title-slider {
+        font-size: 40px;
+    }
+
+    .description-slider {
+        font-size: 16px;
+    }
+
+    .item-content {
+        height: 600px;
+    }
+}
+
+/* Slick Slider Customization */
+.slick-dots {
+    bottom: 30px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+    color: #1f2121;
+    /* Dark dots for light background */
+    opacity: 0.3;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #1f2121;
+}
+
+/* Slick Arrows */
+.slick-prev,
+.slick-next {
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 20px;
+    opacity: 1;
+    color: #1f2121;
+    line-height: 50px;
+}
+
+.slick-prev {
+    left: 30px;
+}
+
+.slick-next {
+    right: 30px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Buttons */
+.button-slider {
+    display: inline-block;
+    padding: 15px 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.button-white {
+    background-color: white;
+    color: #262828;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.button-white:hover {
+    background-color: #262828;
+    color: white;
+    border-color: #262828;
+}
+
+/* Section Specifics */
+.section-padding {
+    padding: 70px 0;
+}
+
+/* About Us */
+.about-title {
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.about-description {
+    font-weight: 500;
+    color: #555;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+/* Hero Slider Layout */
+.block-sliders .slick-slide {
+    height: 85vh;
+}
+
+@keyframes fillCircle {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.item-content {
+    height: 100% !important;
+    max-height: none !important;
+}
+
+.item-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 850px;
+    overflow: hidden;
+}
+
+.content-image {
+    width: 100%;
+    height: 100%;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* vertical-middle */
+    justify-content: center;
+    /* horizontal-center */
+    z-index: 10;
+}
+
+.item-info .content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.title-slider {
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #1f2121;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.description-slider {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+    .title-slider {
+        font-size: 40px;
+    }
+
+    .description-slider {
+        font-size: 16px;
+    }
+
+    .item-content {
+        height: 600px;
+    }
+}
+
+/* Slick Slider Customization */
+.slick-dots {
+    bottom: 30px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+    color: #1f2121;
+    /* Dark dots for light background */
+    opacity: 0.3;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #1f2121;
+}
+
+/* Slick Arrows */
+.slick-prev,
+.slick-next {
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 20px;
+    opacity: 1;
+    color: #1f2121;
+    line-height: 50px;
+}
+
+.slick-prev {
+    left: 30px;
+}
+
+.slick-next {
+    right: 30px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slick-active .title-slider {
+    animation: fadeInUp 1s both 0.3s;
+}
+
+.slick-active .description-slider {
+    animation: fadeInUp 1s both 0.5s;
+}
+
+.slick-active .button-slider {
+    animation: fadeInUp 1s both 0.7s;
+}
+
+/* Custom Backgrounds */
+.bg-gainsboro {
+    background-color: #DCDCDC;
+}
+
+.bg-lightblue {
+    background-color: #adcce0;
+}
+
+/* Global Animations */
+@keyframes flipIn {
+    from {
+        transform: perspective(1000px) rotateY(180deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+
+.animate-flip-in {
+    animation: flipIn 2s cubic-bezier(0.4, 0, 0.2, 2) forwards;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.item-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* vertical-middle */
+    justify-content: center;
+    /* horizontal-center */
+    z-index: 10;
+}
+
+.item-info .content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.title-slider {
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #1f2121;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.description-slider {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+    .title-slider {
+        font-size: 40px;
+    }
+
+    .description-slider {
+        font-size: 16px;
+    }
+
+    .item-content {
+        height: 600px;
+    }
+}
+
+/* Slick Slider Customization */
+.slick-dots {
+    bottom: 30px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+    color: #1f2121;
+    /* Dark dots for light background */
+    opacity: 0.3;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #1f2121;
+}
+
+/* Slick Arrows */
+.slick-prev,
+.slick-next {
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 20px;
+    opacity: 1;
+    color: #1f2121;
+    line-height: 50px;
+}
+
+.slick-prev {
+    left: 30px;
+}
+
+.slick-next {
+    right: 30px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slick-active .title-slider {
+    animation: fadeInUp 1s both 0.3s;
+}
+
+.slick-active .description-slider {
+    animation: fadeInUp 1s both 0.5s;
+}
+
+.slick-active .button-slider {
+    animation: fadeInUp 1s both 0.7s;
+}
+
+/* Custom Backgrounds */
+.bg-gainsboro {
+    background-color: #DCDCDC;
+}
+
+.bg-lightblue {
+    background-color: #adcce0;
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.some-selector {
+    padding: 0 20px;
+}
+
+.title-slider {
+    font-size: 60px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #1f2121;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.description-slider {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Text */
+@media (max-width: 768px) {
+    .title-slider {
+        font-size: 40px;
+    }
+
+    .description-slider {
+        font-size: 16px;
+    }
+
+    .item-content {
+        height: 600px;
+    }
+}
+
+/* Slick Slider Customization */
+.slick-dots {
+    bottom: 30px;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+    color: #1f2121;
+    /* Dark dots for light background */
+    opacity: 0.3;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #1f2121;
+}
+
+/* Slick Arrows */
+.slick-prev,
+.slick-next {
+    z-index: 20;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 20px;
+    opacity: 1;
+    color: #1f2121;
+    line-height: 50px;
+}
+
+.slick-prev {
+    left: 30px;
+}
+
+.slick-next {
+    right: 30px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slick-active .title-slider {
+    animation: fadeInUp 1s both 0.3s;
+}
+
+.slick-active .description-slider {
+    animation: fadeInUp 1s both 0.5s;
+}
+
+.slick-active .button-slider {
+    animation: fadeInUp 1s both 0.7s;
+}
+
+/* Custom Backgrounds */
+.bg-gainsboro {
+    background-color: #DCDCDC;
+}
+
+.bg-lightblue {
+    background-color: #adcce0;
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(50px, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 1s ease-out forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.animate-zoom-in {
+    animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* Initial state for scroll animations */
+.opacity-0 {
+    opacity: 0;
+}
+
+/* Logo Animations */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.text {
+    opacity: 0;
+    animation: 1s ease-in 4s fadein;
+    animation-fill-mode: both;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.t1,
+.t2,
+.t3 {
+    opacity: 0;
+    /* Combine fade and rotate animations */
+    animation: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275) .5s fadein,
+        .5s cubic-bezier(0.175, 0.885, 0.32, 1.275) .5s rotate;
+    animation-fill-mode: both;
+    /* Set origin to bottom left for the swing-up effect */
+    transform-origin: 10px 75px;
+
+    /* Line Art Styling */
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.t1 {
+    stroke: #1A94C8;
+}
+
+/* Dark Blue - Base */
+.t2 {
+    animation-delay: .7s;
+    stroke: #42ADD7;
+}
+
+/* Medium Blue - Frame */
+.t3 {
+    animation-delay: .9s;
+    stroke: #88CAE4;
+}
+
+/* Light Blue - Head */
+/* Hero Slider Fixes */
+.item-info {
+    z-index: 30 !important;
+    pointer-events: none !important;
+}
+
+.item-info .content {
+    pointer-events: auto !important;
+}
