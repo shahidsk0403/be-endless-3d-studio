@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-lg text-white font-bold mb-6">Contact Us</h4>
                         <ul className="space-y-4 text-sm text-gray-400">
-                            <li className="flex items-center"><Phone size={16} className="mr-3 text-teal-600" /> +91 97679 </li>
+                            <li className="flex items-center"><Phone size={16} className="mr-3 text-teal-600" /> +91 97679 73736</li>
                             <li className="flex items-center"><Mail size={16} className="mr-3 text-teal-600" />endless3dprinting44@gmail.com</li>
-                            <li className="flex items-start"><MapPin size={16} className="mr-3 text-teal-600 mt-1" /> Shop No.61, Jyotirmay Complex, Sector P-1, Cidco Town Centre, Seven Hills, Jalna Road Chh.Sambhajinagar (Aurangabad) Maharashtra-431003.<br />Tech Park, Bangalore</li>
+                            <li className="flex items-start"><MapPin size={16} className="mr-3 text-teal-600 mt-1" /> Shop No.61, Jyotirmay Complex, Sector P-1, Cidco Town Centre, Seven Hills, Jalna Road Chh.Sambhajinagar (Aurangabad) Maharashtra-431003.<br /></li>
                         </ul>
                     </div>
 

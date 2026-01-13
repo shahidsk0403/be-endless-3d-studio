@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Product, CartItem, Order } from '../types';
+import { Product, CartItem, Order, Address } from '../types';
 
 interface User {
     name: string;
     email: string;
+    addresses: Address[];
 }
 
 interface StoreContextType {
@@ -34,6 +35,12 @@ interface StoreContextType {
     logout: () => void;
     isLoginOpen: boolean;
     setIsLoginOpen: (isOpen: boolean) => void;
+
+    // Addresses
+    addresses: Address[];
+    addAddress: (address: Omit<Address, 'id'>) => void;
+    updateAddress: (id: string, address: Partial<Address>) => void;
+    removeAddress: (id: string) => void;
 
     isQuickViewOpen: boolean;
     setIsQuickViewOpen: (isOpen: boolean) => void;
@@ -70,6 +77,12 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         return saved ? JSON.parse(saved) : null;
     });
     const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+    // Addresses State
+    const [addresses, setAddresses] = useState<Address[]>(() => {
+        const saved = localStorage.getItem('addresses');
+        return saved ? JSON.parse(saved) : [];
+    });
 
     // Quick View State
     const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);

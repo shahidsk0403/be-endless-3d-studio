@@ -46,8 +46,8 @@ const ContactUs: React.FC = () => {
                         <div className="space-y-8">
                             <div className="bg-charcoal-800 text-white p-8 rounded-xl shadow-lg">
                                 <h3 className="text-xl text-white font-bold mb-4">Studio Location</h3>
-                                <p className="mb-2">123 Innovation Dr, Tech Park</p>
-                                <p className="mb-6">Bangalore, Karnataka, India</p>
+                                <p className="mb-2">Shop No.61, Jyotirmay Complex, Sector P-1, Cidco Town Centre</p>
+                                <p className="mb-6">Seven Hills, Jalna Road , Chh.Sambhajinagar (Aurangabad) Maharashtra-431003.</p>
                                 <p className="font-bold">Hours:</p>
                                 <p>Mon-Fri: 9am - 7pm</p>
                                 <p>Sat: 10am - 4pm</p>

@@ -55,3 +55,16 @@ export interface Order {
     total: number;
     status: 'Processing' | 'Shipped' | 'Delivered';
 }
+
+export interface Address {
+    id: string;
+    type: 'Home' | 'Work' | 'Other';
+    name: string;
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+    phone: string;
+    isDefault: boolean;
+}

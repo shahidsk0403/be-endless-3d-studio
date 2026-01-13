@@ -416,9 +416,11 @@ const Customization: React.FC = () => {
                         <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
                             <h4 className="text-lg font-bold text-amber-700 mb-2">Contact Us</h4>
                             <div className="space-y-2 text-sm text-gray-600">
-                                <p>123 Printing Lane, Maker City</p>
-                                <p>contact@beendless3d.com</p>
-                                <p>(123) 456-7890</p>
+                                <ul className="space-y-2 list-disc">
+                                    <li className="mb-2">Shop No.61, Jyotirmay Complex, Sector P-1, Cidco Town Centre, Seven Hills, Jalna Road Chh.Sambhajinagar (Aurangabad) Maharashtra-431003.</li>
+                                    <li className="mb-2">endless3dprinting44@gmail.com</li>
+                                    <li className="mb-2">+91 97679 73736</li>
+                                </ul>
                             </div>
                         </div>
 

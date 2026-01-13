@@ -166,7 +166,7 @@ const Checkout: React.FC = () => {
                                         <CreditCard className="text-teal-600" /> Payment Method
                                     </h2>
                                     <div className="space-y-4">
-                                        <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                                        {/* <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
                                             <input type="radio" name="payment" defaultChecked className="w-5 h-5 text-teal-600 focus:ring-teal-500" />
                                             <span className="ml-3 font-bold text-gray-800">Credit / Debit Card</span>
                                             <div className="ml-auto flex gap-2">
@@ -177,7 +177,7 @@ const Checkout: React.FC = () => {
                                         <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
                                             <input type="radio" name="payment" className="w-5 h-5 text-teal-600 focus:ring-teal-500" />
                                             <span className="ml-3 font-bold text-gray-800">UPI / Net Banking</span>
-                                        </label>
+                                        </label> */}
                                         <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
                                             <input type="radio" name="payment" className="w-5 h-5 text-teal-600 focus:ring-teal-500" />
                                             <span className="ml-3 font-bold text-gray-800">Cash on Delivery</span>
